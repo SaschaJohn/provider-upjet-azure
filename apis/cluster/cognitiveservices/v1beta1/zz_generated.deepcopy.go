@@ -1476,6 +1476,18 @@ func (in *AccountProjectIdentityInitParameters) DeepCopyInto(out *AccountProject
 			}
 		}
 	}
+	if in.IdentityIdsRefs != nil {
+		in, out := &in.IdentityIdsRefs, &out.IdentityIdsRefs
+		*out = make([]v2.Reference, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
+	}
+	if in.IdentityIdsSelector != nil {
+		in, out := &in.IdentityIdsSelector, &out.IdentityIdsSelector
+		*out = new(v2.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
 		*out = new(string)
@@ -1547,6 +1559,18 @@ func (in *AccountProjectIdentityParameters) DeepCopyInto(out *AccountProjectIden
 				**out = **in
 			}
 		}
+	}
+	if in.IdentityIdsRefs != nil {
+		in, out := &in.IdentityIdsRefs, &out.IdentityIdsRefs
+		*out = make([]v2.Reference, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
+	}
+	if in.IdentityIdsSelector != nil {
+		in, out := &in.IdentityIdsSelector, &out.IdentityIdsSelector
+		*out = new(v2.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
