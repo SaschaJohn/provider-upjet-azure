@@ -38,7 +38,7 @@ metadata:
   name: accountproject
 spec:
   forProvider:
-    customSubdomainName: example-account-subdomain
+    customSubdomainName: uptest-${Rand.RFC1123Subdomain}
     identity:
       type: SystemAssigned
     kind: AIServices
